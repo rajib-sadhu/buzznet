@@ -16,8 +16,10 @@ app.use(express.static("public"));
 
 // Routes imports
 import userRoutes from "./routes/user.routes.js";
+import postRoutes from "./routes/post.routes.js";
 
 // routes declaration
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/posts", postRoutes);
 
 export default app;

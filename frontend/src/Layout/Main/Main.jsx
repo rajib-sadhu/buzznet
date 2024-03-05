@@ -3,24 +3,25 @@ import Navbar from "../Navbar/Navbar";
 import useAuth from "../../hooks/useAuth";
 import { useEffect } from "react";
 import LoadingAnimation from "../../components/LoadingAnimation/LoadingAnimation";
+import Footer from "../Footer/Footer";
 
 const Main = () => {
   const { user, loading } = useAuth();
 
   useEffect(() => {
     if (!user) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     }
 
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     };
   }, [user]);
 
-  if(loading){
-    return <LoadingAnimation/>
+  if (loading) {
+    return <LoadingAnimation />;
   }
 
   return (
@@ -50,9 +51,10 @@ const Main = () => {
       )}
 
       <div className="md:pb-24 pb-16">
-      <Navbar />
+        <Navbar />
       </div>
       <Outlet />
+      <Footer />
     </div>
   );
 };
