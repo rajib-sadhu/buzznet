@@ -29,13 +29,13 @@ const userSchema = new Schema(
     bio: {
       type: String,
     },
-    username: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      trim: true,
-      index: true,
-    },
+    // username: {
+    //   type: String,
+    //   unique: true,
+    //   lowercase: true,
+    //   trim: true,
+    //   index: true,
+    // },
   },
   { timestamps: true }
 );

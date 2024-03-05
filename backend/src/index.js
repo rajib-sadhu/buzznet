@@ -9,6 +9,10 @@ dotenv.config({
 
 const PORT = process.env.PORT || 8000;
 
+app.get("/", (req, res) => {
+  res.send("buzznet social media server running.");
+});
+
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
