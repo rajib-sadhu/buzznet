@@ -30,17 +30,19 @@ const PostCard = ({ value }) => {
           {time[2]?.slice(3, 5).toLowerCase()} - {date.toLocaleDateString()}
         </p>
         <p>{value?.content}</p>
-        <LazyLoad className=" w-full" threshold={0.95}>
-          <img
-            src={
-              value?.image ||
-              "https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
-            }
-            loading="lazy"
-            alt="post image"
-            className="my-2 rounded-xl max-h-60 w-full object-cover"
-          />
-        </LazyLoad>
+        {value?.image && (
+          <LazyLoad className=" w-full" threshold={0.95}>
+            <img
+              src={
+                value?.image ||
+                "https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
+              }
+              loading="lazy"
+              alt="post image"
+              className="my-2 rounded-xl max-h-60 w-full object-cover"
+            />
+          </LazyLoad>
+        )}
         <div className=" bg-slate-200 md:p-4 p-2 rounded-xl flex justify-between">
           <button className="flex items-center gap-1">
             {/* <FcLike /> */}

@@ -69,6 +69,8 @@ const Post = () => {
       if (data.success) {
         toast.success("Post upload successfully.");
         postsFetch();
+        setImage(null);
+        setFilename("");
         form.reset();
       }
       setIsLoading(false);
