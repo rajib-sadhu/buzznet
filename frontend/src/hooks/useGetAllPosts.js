@@ -13,7 +13,7 @@ const useGetAllPosts = () => {
     refetch: postsFetch,
   } = useQuery({
     queryKey: ["allPosts"],
-    enabled: !loading,
+    // enabled: !loading,
     queryFn: async () => {
       const res = await axiosSecure(`/posts/all-posts`);
       return res.data;

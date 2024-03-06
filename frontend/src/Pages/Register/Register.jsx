@@ -43,7 +43,7 @@ const Register = () => {
 
       if (res) {
         try {
-          const res = await axios.post("/api/v1/users/register", {
+          const res = await axios.post("https://buzznet-server.vercel.app/api/v1/users/register", {
             fullName,
             email,
             gender,
@@ -82,7 +82,7 @@ const Register = () => {
           </div>
         </div>
         <div>
-          <form onSubmit={handleSubmit} className="md:p-10 p-5 space-y-2">
+          <form onSubmit={handleSubmit} className="md:p-10 md:pb-2 p-5 space-y-2">
             <input
               type="text"
               name="name"
@@ -135,9 +135,11 @@ const Register = () => {
               {isLoading && <ImSpinner8 className="me-2 mt-1 animate-spin" />}
               Register
             </button>
+            {error && (
+              <p className="text-red-600 font-medium bg-red-100 p-2">{error}</p>
+            )}
           </form>
           <div className="md:px-10 px-5">
-            <p className="text-red-600 font-medium">{error}</p>
             <p>
               Already have an account?{" "}
               <Link to="/login" className="underline text-blue-700">

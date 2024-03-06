@@ -28,7 +28,7 @@ const Main = () => {
     <div>
       {!user && (
         <div className="fixed top-0 bottom-0 left-0 right-0 backdrop-blur-md">
-          <div className="fixed z-30 inset-0 flex items-center justify-center">
+          <div className="fixed z-50 inset-0 flex items-center justify-center">
             <div className="absolute z-50 bg-white p-8 rounded-lg shadow-lg m-2">
               <h2 className="text-3xl font-semibold mb-4">Join Now</h2>
               <p className="mb-4">

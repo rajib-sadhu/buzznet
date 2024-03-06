@@ -6,6 +6,8 @@ import useUserInfo from "../../hooks/useUserInfo";
 
 import { ImSpinner8 } from "react-icons/im";
 
+import logo from "../../assets/logo.png"
+
 const Navbar = () => {
   const { user, userLogOut, loading } = useAuth();
   const [openMenu, setOpenMenu] = useState(false);
@@ -46,7 +48,7 @@ const Navbar = () => {
       <nav className="flex items-center justify-between">
         <Link to="/">
           <img
-            src="https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/demo-icon.png"
+            src={logo}
             alt="logo"
             className="md:h-12 h-8 object-contain"
           />

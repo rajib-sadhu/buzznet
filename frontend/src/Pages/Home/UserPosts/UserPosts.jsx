@@ -8,7 +8,7 @@ const UserPosts = () => {
   const [allPosts, postsLoading, postsFetch] = useGetAllPosts();
 
   if (postsLoading) {
-    return <LoadingAnimation />;
+    return <div className="z-30" ><LoadingAnimation /></div>;
   }
 
   return (
@@ -17,9 +17,10 @@ const UserPosts = () => {
         ? [...Array(1)].map((_, i) => {
             return <PostCard key={i} />;
           })
-        : allPosts?.data.map((value) => (
-            <PostCard key={value?._id} value={value} />
-          ))}
+        : user &&
+          allPosts?.data?.map((value) => {
+            return <PostCard key={value?._id} value={value} />;
+          })}
     </div>
   );
 };

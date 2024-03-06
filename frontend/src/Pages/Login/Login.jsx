@@ -53,10 +53,10 @@ const Login = () => {
             <p>Please log in to your account to continue.</p>
           </div>
         </div>
-        <div>
+        <div className="h-full md:flex flex-col justify-center">
           <form
             onSubmit={handleLogin}
-            className="md:p-10 p-5 space-y-2 md:flex flex-col justify-center h-full"
+            className="md:p-10 md:pb-5 p-5 space-y-2"
           >
             <input
               type="email"
@@ -84,25 +84,26 @@ const Login = () => {
                   {error}
                 </p>
               )}
-              <div className="md:px-0 px-2 space-y-5 pt-2">
-                <p>
-                  Forgot your password?{" "}
-                  <Link
-                    to="/forgot-password"
-                    className="underline text-blue-700"
-                  >
-                    Reset Password
-                  </Link>
-                </p>
-                <p>
-                  Don't have an account yet?{" "}
-                  <Link to="/register" className="underline text-blue-700">
-                    Sign Up Here
-                  </Link>
-                </p>
-              </div>
             </div>
           </form>
+          <div className="md:px-10 px-4 space-y-2">
+            <p>
+              Forgot your password?{" "}
+              <button
+                // to="/forgot-password"
+                onClick={() => toast.error("This features not available.")}
+                className="underline text-blue-700"
+              >
+                Reset Password
+              </button>
+            </p>
+            <p>
+              Don't have an account yet?{" "}
+              <Link to="/register" className="underline text-blue-700">
+                Sign Up Here
+              </Link>
+            </p>
+          </div>
           <Social />
         </div>
       </div>

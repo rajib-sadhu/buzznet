@@ -4,7 +4,7 @@ import axios from "axios";
 import useAuth from "./useAuth";
 
 const axiosSecure = axios.create({
-  baseURL: "/api/v1",
+  baseURL: "https://buzznet-server.vercel.app/api/v1",
 });
 
 const useAxiosSecure = () => {

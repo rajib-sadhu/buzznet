@@ -4,9 +4,7 @@ import { FaCommentDots, FaShare } from "react-icons/fa6";
 import LazyLoad from "react-lazy-load";
 
 const PostCard = ({ value }) => {
-  const { _id, userDetails, content, image, createdAt } = value;
-
-  const date = new Date(createdAt);
+  const date = new Date(value?.createdAt);
   const time = date.toLocaleTimeString().split(":");
 
   return (
@@ -20,7 +18,7 @@ const PostCard = ({ value }) => {
             alt="profile image"
             className="w-10 h-10 rounded-full object-contain"
           />
-          <h2 className="font-medium">{userDetails[0]?.fullName}</h2>
+          <h2 className="font-medium">{value?.userDetails[0]?.fullName}</h2>
         </div>
         <button>
           <CiMenuKebab />
@@ -29,13 +27,13 @@ const PostCard = ({ value }) => {
       <div className="py-2">
         <p className="text-xs font-medium bg-slate-200 border rounded-full inline-block py-1 px-2 mb-1">
           {time[0]}:{time[1]}
-          {time[2].slice(3, 5).toLowerCase()} - {date.toLocaleDateString()}
+          {time[2]?.slice(3, 5).toLowerCase()} - {date.toLocaleDateString()}
         </p>
-        <p>{content}</p>
-        <LazyLoad className="min-h-28 w-full" threshold={0.95}>
+        <p>{value?.content}</p>
+        <LazyLoad className=" w-full" threshold={0.95}>
           <img
             src={
-              image ||
+              value?.image ||
               "https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
             }
             loading="lazy"

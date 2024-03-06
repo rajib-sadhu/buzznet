@@ -3,13 +3,14 @@ import cors from "cors";
 import jwt from "jsonwebtoken";
 import { APIResponse } from "./utils/ApiResponse.js";
 const app = express();
-
+app.use(cors());
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
     credentials: true,
   })
 );
+
 
 app.use(express.json());
 app.use(express.static("public"));

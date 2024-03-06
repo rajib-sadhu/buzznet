@@ -41,7 +41,7 @@ const AuthProvider = ({ children }) => {
 
       if (currentUser) {
         axios
-          .post("/api/v1/users/jwt", { email: currentUser.email })
+          .post("https://buzznet-server.vercel.app/api/v1/users/jwt", { email: currentUser.email })
           .then((res) => {
             const token = res?.data?.data;
             localStorage.setItem("access-token", token);
